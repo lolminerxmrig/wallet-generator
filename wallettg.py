@@ -20,7 +20,7 @@ def my_wallet():
 def send_message(message):
     if not wallets:
         bot.reply_to(message,"No more wallets serrrr!")
-    if len(wallets) == 5:
+    if len(wallets) == 50 or len(wallets) == 100 or len(wallets) == 500 or len(wallets) == 1000:
         mensagem = bot.send_message('-1001548697096','Restam '+ str(len(wallets)) + ' wallets!')
         bot.pin_chat_message('-1001548697096',mensagem.id)
         variable = random.choice(wallets)
