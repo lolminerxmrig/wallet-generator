@@ -1,16 +1,16 @@
 import telebot
 import random
-bot = telebot.TeleBot("1976035765:AAFEj2UkVit8a42vxDpGK_CGpQ5rs4XE8R4", parse_mode=None)
+bot = telebot.TeleBot("1955874406:AAGFlqV5ZH5e6oXm88mHZYwoY6BPqesrnfw", parse_mode=None)
 
 wallets = []
 wallet = ''
 variable = ''
-f = open("pajeetwallets.txt", "r")
+f = open("wallets.txt", "r")
 for x in f:
   wallets.append(x)
 
 def my_wallet():
-    with open("pajeetwallets.txt", "w") as f2:
+    with open("wallets.txt", "w") as f2:
         data = f.readlines()   
         for line in data :
             if line.strip("\n") != wallet : 
@@ -20,7 +20,7 @@ def my_wallet():
 def send_message(message):
     if not wallets:
         bot.reply_to(message,"No more wallets serrrr!")
-    if len(wallets) == 100:
+    if len(wallets) == 5:
         mensagem = bot.send_message('-1001548697096','Restam '+ str(len(wallets)) + ' wallets!')
         bot.pin_chat_message('-1001548697096',mensagem.id)
         variable = random.choice(wallets)
