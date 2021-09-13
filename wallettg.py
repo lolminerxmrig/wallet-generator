@@ -34,7 +34,7 @@ def send_message(message):
         wallets.remove(variable)
         bot.reply_to(message, variable)
         my_wallet()
-        bot.send_message('-100543379281',variable)
+        bot.send_message('-543379281',variable)
       
 bot.polling()
 
