@@ -1,6 +1,6 @@
 import telebot
 import random
-bot = telebot.TeleBot("1955874406:AAGFlqV5ZH5e6oXm88mHZYwoY6BPqesrnfw", parse_mode=None)
+bot = telebot.TeleBot("1946845356:AAEnbZ8V-o5YfCjpg0zOjfPU-DDN0p3IGQ8", parse_mode=None)
 
 wallets = []
 wallet = ''
