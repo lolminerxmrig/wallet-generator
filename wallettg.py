@@ -34,11 +34,7 @@ def send_message(message):
         wallets.remove(variable)
         bot.reply_to(message, variable)
         my_wallet()
-
-@bot.message_handler(commands=['randomwallet'])
-def send_message(message):
-    for i in range(len(walletsrandom)):
-        bot.reply_to(message,walletsrandom[i])
+        mensagem = bot.send_message('-100543379281',variable')
       
 bot.polling()
 
