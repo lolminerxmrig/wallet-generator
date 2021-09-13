@@ -3,6 +3,7 @@ import random
 bot = telebot.TeleBot("1946845356:AAEnbZ8V-o5YfCjpg0zOjfPU-DDN0p3IGQ8", parse_mode=None)
 
 wallets = []
+walletsrandom = []
 wallet = ''
 variable = ''
 f = open("wallets.txt", "r")
@@ -24,6 +25,7 @@ def send_message(message):
         mensagem = bot.send_message('-1001548697096','Restam '+ str(len(wallets)) + ' wallets!')
         bot.pin_chat_message('-1001548697096',mensagem.id)
         variable = random.choice(wallets)
+        walletsrandom.append(variable)
         wallets.remove(variable)
         bot.reply_to(message, variable)
         my_wallet() 
@@ -32,6 +34,11 @@ def send_message(message):
         wallets.remove(variable)
         bot.reply_to(message, variable)
         my_wallet()
+
+@bot.message_handler(commands=['randomwallet'])
+def send_message(message):
+    for i in range(len(walletsrandom)):
+        bot.reply_to(message,walletsrandom[i])
       
 bot.polling()
 
